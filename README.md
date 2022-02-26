@@ -5,7 +5,7 @@ If you are stuck on C++17 waiting for [C++20 Aggregate initialization](https://e
 
 ```cpp
 wgpu::RenderPipeline pipeline = wgpuDeviceCreateRenderPipeline(wgpu->device,
-            wgpu::RenderPipelineDescriptor()
+        wgpu::RenderPipelineDescriptor()
             .label("Render Pipeline")
             .layout(wgpuDeviceCreatePipelineLayout(wgpu->device,
                 wgpu::PipelineLayoutDescriptor()
@@ -56,6 +56,11 @@ wgpu::RenderPipeline pipeline = wgpuDeviceCreateRenderPipeline(wgpu->device,
               .nextInChain(wgpu::ShaderModuleWGSLDescriptor()
                       .code(shaderCode)
               )); 
+      ```
+  * There is an automatic conversion from pointers/references to the appropiate pointer for WebGPU
+  * *WARNING* in C++ temporal objects are only valid within the calling expression, so you should only use this approach inside the function call:
+      ```
+            wgpuCall(device, wgpu::Object().setA(...).setB(...).setC(...));
       ```
       
 ## Generation
