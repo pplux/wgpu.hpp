@@ -162,7 +162,7 @@ def generateOutput(file, bindings):
         f.write(template_end)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="wgpu++ binding generator, for example use it as: './generate.py ../deps/wgpu-native/ffi/webgpu-headers/webgpu.h ../include/wgpu++.h'")
+    parser = argparse.ArgumentParser(description="wgpu++ binding generator, for example use it as: './generate.py /deps/webgpu-headers/webgpu.h wgpu.hpp'")
     parser.add_argument("input")
     parser.add_argument("output")
     args = parser.parse_args() 
