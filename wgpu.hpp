@@ -248,6 +248,7 @@ namespace wgpu {
         PROP(depthStencilFormat)
         PROP(depthReadOnly)
         PROP(stencilReadOnly)
+        PROP(sampleCount)
     END
 
     CLASS(RenderPassDepthStencilAttachment)
@@ -377,6 +378,8 @@ namespace wgpu {
         PROP(baseMipLevel)
         PROP(baseArrayLayer)
         PROP(aspect)
+        PROP(mipLevelCount)
+        PROP(arrayLayerCount)
     END
 
     CLASS(VertexAttribute)
@@ -468,6 +471,8 @@ namespace wgpu {
         PROP(dimension)
         PROP(size)
         PROP(format)
+        PROP(mipLevelCount)
+        PROP(sampleCount)
     END
 
     CLASS(VertexBufferLayout)

@@ -119,11 +119,15 @@ def produceClass(name, it):
         # entri|ies -> entr|yCount
         # colorFormat|s -> colorFormat|sCount
         prefix = i[:-6]
+        found = False
         for r in regular_properties:
             if r.find(prefix) == 0:
                 list_properties[r] = i
                 regular_properties.remove(r)
+                found = True
                 break
+        if not found:
+            regular_properties.append(i)
     for k in list_properties:
         out = out + f"        LIST({k},{list_properties[k]})\n"
     for p in regular_properties:
